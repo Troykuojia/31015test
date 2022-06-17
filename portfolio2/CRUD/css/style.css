@@ -1,0 +1,289 @@
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans HK', sans-serif;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+       
+       /* chrome的input樣式 */
+        input:-webkit-autofill {
+            -webkit-animation: autofill-fix 1s infinite;
+            /* -webkit-text-fill-color: #fff; */
+        }
+        @-webkit-keyframes autofill-fix {
+            from {
+                background-color: transparent
+            }
+            to {
+                background-color: transparent
+            }
+        }
+
+        .container-wrap {
+            background: linear-gradient(to right, #021943 0%, #023f74 100%);
+            min-height: 100vh;  /*為了讓背景色顯示，預設高度100vh。*/
+            width: 85%;
+            position: absolute;
+            right: 0;
+        }
+
+        ul li {
+            list-style-type: none;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* navbar樣式開始 */
+        .nav-bg{
+            background-color: #00002D;
+            box-shadow: 0px 6px 8px 0px rgba(108, 108, 108, 0.214);
+            /* border:1px solid red; */
+            z-index:99;
+        }
+        #navbar {
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        #navbar a {
+            color: #fff;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: #05f2f2;
+        }
+
+        #navbar hr {
+            background-color: #05f2f2;
+            height: 3px;
+            border: none;
+        }
+
+        
+
+        .logo {
+            width: 100%;
+            /* border-radius: 50%; */
+            /* overflow: hidden; */
+        }
+
+        .userPic {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .dropdown-menu {
+            background-color: #05f2f2;
+        }
+        /* navbar樣式結束 */
+
+        
+       
+         /* 訂票 Tina開始 */
+         /* form-control */
+
+        .all-bg {
+            min-height: 100vh;
+            background-image: url(./../img/earth.jpg);
+            background-size: cover;
+            padding: 16px 0;
+        }
+
+         .all-wrap {
+             width: 80%;
+             margin: 0 auto;
+             margin-bottom: 20px;
+         }
+      
+        .ticket-form {
+            color: white;
+        }
+
+        .ticket-wrap { 
+            border-radius: 20px;
+            border: 1px solid #05f2f2;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticket-form  label {
+            background-color: #05f2f2;
+            margin: 0;
+            width: 20%;
+        }
+
+        .ticket-form .form-control {
+            border-radius: 0;
+            background-color: rgba(255, 255, 255, 0);
+            color: #fff;
+            width: 70%;
+            border: 0;
+        }
+
+        .member-confirm {
+            width: 10%;
+            border: 0;
+        }
+
+        #members::placeholder,#membername::placeholder {
+            color: #fff;
+        }
+
+        /* .fileUploadBtn {
+            position: absolute;
+            right: 0;
+        } */
+
+        .ticket-form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='white' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        }
+
+        .ticketBtn {
+            border-radius: 20px;
+            background-color: #fff;
+            color: #048ABF;
+            border: 1px solid #048ABF;
+            display: none;
+        }
+
+        .ticketBtn:hover {
+            background-color: #F7C242;
+            border: 1px solid #fff;
+        }
+
+        .myticket-wrap {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .myticket-content {
+            width: 100%;
+            background-color: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border-bottom: 1px solid #05f2f2;
+            position: relative;
+        }
+
+        .myticket-content h4 {
+            background-color: #048ABF;
+            text-align: center;
+            color: white;
+        }
+
+        .myticket-change {
+            border-bottom: 1px solid #a3a3a3;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .myticket-edit-btn {
+            background-color: #05f2f2;
+            border-radius: 20px;
+            color: white;
+            margin-right: 10px;
+            padding: 5px 10px;
+            text-decoration:none;
+        }
+
+        .myticket-delete-btn {
+            background-color: #a3a3a3;
+            border-radius: 20px;
+            color: white;
+            margin-right: 10px;
+            padding: 5px 10px;
+            text-decoration:none;
+        }
+
+        .myticket-edit-btn:hover, .myticket-delete-btn:hover {
+            color: white;
+            filter: brightness(1.5);
+        }
+
+        .rocket-pic {
+            width: 250px;
+            position: absolute;
+            top: 70px;
+            right: 150px;
+        }
+
+        .barcode {
+            width: 220px;
+        }
+
+        .myticket-content ul {
+            margin: 0;
+        }
+
+        /* .myticket-content-pic {
+            height: 100px;
+            width: 50px;
+        } */
+
+        .myticket-content-pic img {
+            min-height: 240px;
+            max-height: 241px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .ticket-price-wrap {
+            display: none;
+        }
+
+        .ticket-price-wrap table{
+            width: 25%;
+            margin-left: auto;
+            /* border: 1px solid #FFC107; */
+            color: #021943;
+        }
+
+        .ticket-price-wrap thead {
+            background-color: #FFC107;
+            color: white;
+            text-align: center;
+        }
+
+        .ticket-price-wrap td {
+            border-bottom: 1px solid #FFC107;
+            background-color: #ffffff;
+            padding: 5px 10px;
+        }
+        
+        .ticket-price-content {
+            text-align: right;
+        }
+
+        .ticket-sumprice {
+            color:#FFC107;
+        }
+        
+        /* 訂票 Tina結束 */
+
+        /* Transportation */
+        .transport{
+            width: 70%;
+            margin: 0 auto;
+        }
+        .transport h1{
+            text-align: center;
+            color: aliceblue;
+            
+        }
+
+
+         /* Transportation END*/
+         /* jhih-ting開始 */
+         .form-control {
+            border-radius: 20px;
+            
+        }
+
+       /* jhih-ting結束 */
