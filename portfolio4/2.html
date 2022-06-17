@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            background-color: rgb(160, 161, 161);
+        }
+
+        .index {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .card {
+            width: 300px;
+            height: 300px;
+            background-color: black;
+            border: 1px solid #7fff00;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .text>p {
+            width: 200px;
+            /* border: 1px solid #7fff00; */
+            color: white;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+
+        h4 {
+            color: #7fff00;
+        }
+
+        .title {
+            width: 200px;
+            /* border: 1px solid #7fff00; */
+            margin: 10px 0 10px 0;
+        }
+
+        .title>p {
+            color: #CCCCCC;
+            font-size: 16px;
+        }
+
+        .button {
+            width: 200px;
+            height: 40px;
+            border-radius: 5px;
+            background: black;
+            border: 1px solid #7fff00;
+            color: #7fff00;
+            font-size: 16px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .arrow {
+            margin-left: 15px;
+            display: inline-block;
+            height: 12px;
+            position: relative;
+            width: 12px;
+        }
+
+        .arrow::after {
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+            border-right-style: solid;
+            border-right-width: 2px;
+            content: "";
+            display: inline-block;
+            height: 9px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 9px;
+        }
+
+        .arrow.arrow-bar::before {
+            bottom: 1px;
+            content: "";
+            height: 20px;
+            position: absolute;
+            right: 0;
+            transform-origin: bottom;
+            width: 2px;
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        .arrow.is-right {
+            -moz-transform: rotate(315deg);
+            -ms-transform: rotate(315deg);
+            -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+        }
+
+        .arrow::after,
+        .arrow .arrow::after {
+            border-color: #7fff00;
+        }
+
+        .arrow::before,
+        .arrow .arrow::before {
+            background-color: #7fff00;
+        }
+
+        .subscript {
+            width: 0;
+            height: 0;
+            border-width: 90px 90px 0 0;
+            border-style: solid;
+            border-color: #7fff00 transparent transparent transparent;
+            position: relative;
+            top: 0;
+            left: -105px;
+        }
+
+        .subscript::after {
+            position: relative;
+            content: "TagName";
+            display: block;
+            width: 30px;
+            height: 30px;
+            font-size: 15px;
+            left: 18px;
+            top: -55px;
+            transform: rotate(312deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="index">
+        <div class="card">
+            <div class="subscript"></div>
+            <div class="content">
+                <div class="text">
+                    <p>大家好！我是測試行！請看我的最後面有沒有變點點點！大家好！我是測試行！請看我的最後面有沒有變點點點！</p>
+                </div>
+                <div class="title">
+                    <h4>小標文字</h4>
+                    <P>描述文字</P>
+                </div>
+                <a href="#">
+                    <div class="button">置底按鈕<span class="arrow arrow-bar is-right"></span></div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

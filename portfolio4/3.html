@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            background-color: rgb(37, 37, 37);
+        }
+
+
+
+        .con {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .menubox-row1 {
+            width: 30%;
+            background-color: rgb(37, 37, 37);
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-group-text {
+            color: #7fff00;
+        }
+
+        .menus {
+            margin-top: 20px;
+        }
+
+        .button {
+            list-style: none;
+            margin-left: 30px;
+            line-height: 2;
+            /* border: 1px solid #7fff00; */
+            color: #b3b3b3;
+        }
+
+        .button:hover {
+            color: #7fff00;
+        }
+
+        .menus>a:hover {
+            text-decoration: none;
+            color: #7fff00;
+        }
+
+        .menus>h6 {
+            color: #7fff00;
+        }
+
+        .arrow {
+            margin-left: 15px;
+            display: inline-block;
+            height: 12px;
+            position: relative;
+            width: 12px;
+            margin-left: 70px;
+        }
+
+        .arrow::after {
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+            border-right-style: solid;
+            border-right-width: 2px;
+            content: "";
+            display: inline-block;
+            height: 12px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 12px;
+        }
+
+        .arrow.arrow-bar::before {
+            bottom: 1px;
+            content: "";
+            height: 50px;
+            position: absolute;
+            right: 0;
+            transform-origin: bottom;
+            width: 2px;
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        .arrow.is-right {
+            -moz-transform: rotate(315deg);
+            -ms-transform: rotate(315deg);
+            -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+        }
+
+        .arrow::after,
+        .arrow .arrow::after {
+            border-color: rgb(37, 37, 37);
+        }
+
+        .arrow::before,
+        .arrow .arrow::before {
+            background-color: rgb(37, 37, 37);
+        }
+
+        .arrow:hover::after,
+        .arrow .arrow:hover::after {
+            border-color: #7fff00;
+        }
+
+        .arrow:hover::before,
+        .arrow .arrow:hover::before {
+            background-color: #7fff00;
+        }
+
+        .field-row2 {
+            width: 100%;
+            background-color: rgb(37, 37, 37);
+            border-left: 1px solid rgba(255, 255, 255, 0.315);
+            padding-left: 50px;
+        }
+
+        .form-group label:after {
+            content: ' *';
+            color: rgb(255, 0, 0);
+            font-size: 150%;
+        }
+
+        .text {
+            color: white;
+        }
+
+        .illustrate {
+            /* border: 1px solid red; */
+            width: 33%;
+            height: 30vh;
+        }
+
+        .picture {
+            /* border: 1px solid red; */
+            width: 33%;
+            height: 30vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .photo {
+            border: 1px solid #7fff00;
+            width: 90%;
+            height: 22vh;
+            background-color: #a7a7a7;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+        }
+
+        .replenish {
+            /* border: 1px solid red; */
+            width: 33%;
+            height: 30vh;
+            color: white;
+        }
+
+        .othertext {
+            color: white;
+        }
+
+        .title {
+            color: #7fff00;
+        }
+
+        .othertextlink {
+            color: white;
+        }
+
+        .replenish>h6 {
+            font-size: 18px;
+            padding-top: 35px;
+        }
+
+        .replenish>ul {
+            padding-left: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            margin-top: 35px;
+            width: 100%;
+            border-top: 1px solid green;
+        }
+
+        .clearform,
+        .layin {
+            width: 150px;
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid #b3b3b3;
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .clearform {
+            background-color: rgb(37, 37, 37);
+        }
+
+        .layin {
+            margin-left: 30px;
+        }
+
+        .clearform>p,
+        .layin>p {
+            color: #b3b3b3;
+
+        }
+
+        .clearform:hover,
+        .layin:hover {
+            background-color: #7fff00;
+            border: 1px solid #7fff00;
+        }
+
+        .clearform>p:hover,
+        .layin>p:hover {
+            color: #000000;
+
+
+        }
+
+        .othertextlink>a {
+            text-decoration: underline
+        }
+
+        .buttons>a:hover {
+            text-decoration: none;
+        }
+
+        @media screen and (min-width:380px) {
+            .con {
+                max-width: 1080px;
+                margin-top: 20px;
+            }
+
+            .detailed {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 40px;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .clearform, .layin{
+                margin-top: 35px;
+                margin-bottom: 35px;
+            }
+        }
+
+            @media (max-width: 380px) {
+                .menus {
+                    display: none;
+                }
+
+                .field-row2 {
+                    padding-left: 0px;
+                    margin: 20px;
+                    border-left: 0px;
+
+                }
+
+                .menubox-row1 {
+                    width: 0px;
+                }
+
+                .form-control {
+                    width: 100%;
+                }
+
+                .illustrate {
+                    width: 100%;
+                    height: 25vh;
+                }
+
+                .picture {
+
+                    width: 100%;
+                }
+
+                .photo {
+                    width: 90%;
+
+                }
+
+                .replenish {
+                    width: 100%;
+                    height: 20vh;
+                    border-bottom: 1px solid #7fff00;
+                }
+
+                .layin {
+                    width: 330px;
+                    margin-left: 0px;
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                    background-color: #7fff00;
+                }
+
+                .layin>p {
+                    color: #000000;
+
+                }
+
+                .clearform {
+                    width: 330px;
+                    margin-bottom: 15px;
+                }
+
+                .buttons {
+                    display: flex;
+                    margin-top: 0px;
+                    flex-direction: column-reverse;
+                    align-content: center;
+                    flex-wrap: wrap;
+
+                }
+
+
+
+                .clearform {
+                    width: 330px;
+                    margin-bottom: 10px;
+                }
+
+                .replenish>h6 {
+                    padding-top: 0px;
+                }
+
+                .detailed {
+                    border-bottom: 0px;
+                }
+
+                .form-group-text label:after {
+                    content: ' ';
+                    color: rgb(255, 0, 0);
+                    font-size: 150%;
+                }
+            }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="menubox-row1">
+            <div class="menus">
+                <h6>側邊選單標題</h6>
+                <a href="#">
+                    <div class="button">選單1<span class="arrow arrow-bar is-right"></span></div>
+                </a>
+                <a href="#">
+                    <div class="button">選單2<span class="arrow arrow-bar is-right"></span></div>
+                </a>
+                <a href="#">
+                    <div class="button">選單3<span class="arrow arrow-bar is-right"></span></div>
+                </a>
+                <a href="#">
+                    <div class="button">選單4<span class="arrow arrow-bar is-right"></span></div>
+                </a>
+                <a href="#">
+                    <div class="button">選單5<span class="arrow arrow-bar is-right"></span></div>
+                </a>
+            </div>
+        </div>
+        <div class="field-row2">
+            <div class="col-xs-12">
+                <div class="form-group form-group-text">
+                    <label class="form-group-text" for="text">側邊選單標題</label>
+                    <select class="form-control">
+                        <option value="+47">選單1</option>
+                        <option value="+46">選單2</option>
+                        <option value="+45">選單3</option>
+                        <option value="+45">選單4</option>
+                        <option value="+45">選單5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="text" for="text">欄位:一班欄位</label>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default" placeholder="填入欄位資料">
+                </div>
+                <div class="form-group">
+                    <label class="text" for="text">欄位:不可修改的欄位</label>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default" placeholder="不可修改的欄位資料" disabled="disabled">
+                </div>
+                <div class="form-group">
+                    <label class="text" for="text">欄位:一班欄位</label>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default" placeholder="填入欄位資料">
+                </div>
+                <div class="form-group">
+                    <label class="text" for="text">欄位:一班欄位</label>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default" placeholder="填入欄位資料">
+                </div>
+                <div class="form-group">
+                    <label class="text" for="text">欄位:一班欄位</label>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default" placeholder="填入欄位資料">
+                </div>
+                <div class="detailed">
+                    <div class="illustrate">
+                        <p class="othertext">大家好！我是測試行！</p>
+                        <p class="title">標題</p>
+                        <p class="othertext">大家好！我是測試行！大家好！我是測試行！大家好！我是測試行！大家好！我是測試行！大家好！我是測試行！</p>
+                        <p class="othertextlink">大家好我是測試行!<a href="#">這裡是超連結樣式</a></p>
+                    </div>
+                    <div class="picture">
+                        <div class="photo">
+                            <p>圖片區塊</p>
+                        </div>
+                    </div>
+                    <div class="replenish">
+                        <h6>補充說明標題</h6>
+                        <ul>
+                            <li>說明文字</li>
+                            <li>說明文字</li>
+                            <li>說明文字</li>
+                            <li>說明文字</li>
+                        </ul>
+                    </div>
+                    <div class="buttons">
+                        <a href="#">
+                            <div class="clearform">
+                                <p>重填</p>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="layin">
+                                <p>儲存</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
